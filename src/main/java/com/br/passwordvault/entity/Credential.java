@@ -1,5 +1,6 @@
 package com.br.passwordvault.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -24,6 +25,7 @@ public class Credential {
 
   @ManyToOne
   @JoinColumn(name = "user_id", nullable = false)
+  @JsonBackReference
   private User user;
 
   public Credential() {}

@@ -1,5 +1,6 @@
 package com.br.passwordvault.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
@@ -22,6 +23,7 @@ public class User {
   private String masterPassword;
 
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @JsonManagedReference
   private List<Credential> credentials;
 
   public User(){

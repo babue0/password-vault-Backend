@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Scanner;
 
-@Component
+//@Component
 public class TerminalRunner implements CommandLineRunner {
 
   private final UserService userService;
