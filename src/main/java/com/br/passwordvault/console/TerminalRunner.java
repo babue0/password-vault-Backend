@@ -51,7 +51,7 @@ public class TerminalRunner implements CommandLineRunner {
       case "1" -> register(scanner);
       case "2" -> login(scanner);
       case "3" -> {
-        System.out.println("Bye bye! 👋");
+        System.out.println("Bye bye!");
         System.exit(0);
       }
       default -> System.out.println("Invalid option");
@@ -103,9 +103,9 @@ public class TerminalRunner implements CommandLineRunner {
 
     try {
       currentUser = userService.login(username, password);
-      System.out.println("🔓 Login successful!");
+      System.out.println(" Login successful!");
     } catch (Exception e) {
-      System.out.println("🔒 Login failed: " + e.getMessage());
+      System.out.println(" Login failed: " + e.getMessage());
     }
   }
 
