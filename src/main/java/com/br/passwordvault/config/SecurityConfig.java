@@ -20,8 +20,8 @@ public class SecurityConfig {
 
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/api/**").permitAll() // Libera TUDO que começa com /api
-                    .anyRequest().permitAll() // Libera o resto também (para fins de estudo)
+                    .requestMatchers("/api/**").permitAll()
+                    .anyRequest().permitAll()
             );
     return http.build();
   }
@@ -30,9 +30,9 @@ public class SecurityConfig {
   public UrlBasedCorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration config = new CorsConfiguration();
     config.setAllowCredentials(true);
-    config.addAllowedOriginPattern("*"); // Permite qualquer origem (seu HTML)
-    config.addAllowedHeader("*");        // Permite qualquer cabeçalho
-    config.addAllowedMethod("*");        // Permite GET, POST, PUT, DELETE
+    config.addAllowedOriginPattern("*");
+    config.addAllowedHeader("*");
+    config.addAllowedMethod("*");
 
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", config);
