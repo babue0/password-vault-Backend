@@ -41,9 +41,13 @@ public class CredentialController {
       c.setServiceName(updatedCredential.getServiceName());
       c.setUsername(updatedCredential.getUsername());
       c.setPassword(updatedCredential.getPassword());
-      // O service já criptografa ao salvar
       credentialService.addCredential(c.getUser(), c);
       return c;
     }).orElseThrow(() -> new RuntimeException("Credential not found"));
+  }
+
+  @DeleteMapping("/{id}")
+  public void delete (@PathVariable Long id){
+    credentialService.deleteCredential(id);
   }
 }
